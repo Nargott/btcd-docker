@@ -1,0 +1,11 @@
+version: '2'
+services:
+  btcd:
+    build: .
+    image: btcd:0.12.0-beta
+    ports:
+    - "8333:8333"
+    - "8334:8334"
+    volumes:
+    - /opt/btcd/.btcd:/root/.btcd
+    - /opt/btcd/.btcctl:/root/.btcct
