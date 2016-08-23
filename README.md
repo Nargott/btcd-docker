@@ -8,7 +8,7 @@ If you choose to use docker-compose your .yml would look like this:
 version: '2'
 services:
   btcd:
-    image: lcallero/btcd:0.12.0-beta
+  image: lcallero/btcd-docker:0.12.0-beta
     ports:
     - "8333:8333"
     - "8334:8334"
