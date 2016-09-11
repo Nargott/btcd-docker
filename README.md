@@ -1,4 +1,5 @@
 # btcd-docker
+[![](https://images.microbadger.com/badges/image/lcallero/btcd-docker.svg)](https://microbadger.com/images/lcallero/btcd-docker "Get your own image badge on microbadger.com")
 A [btcd] image ready to go! An alternative to bitcoind written in [Go].
 
 Mount volumes for /root/.btcd and /root/.btcctl, it's where persistent data is kept.
