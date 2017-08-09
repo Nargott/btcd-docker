@@ -1,5 +1,5 @@
 ## -*- docker-image-name: "btcd:0.12.0-beta" -*-
-FROM golang:1.6.2-wheezy
+FROM golang:1.9-stretch
 
 MAINTAINER lucianocallero@gmail.com
 
