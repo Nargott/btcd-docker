@@ -41,16 +41,6 @@ OR
 rpclimituser=mylimituser
 rpclimitpass=Limitedp4ssw0rd
 ```
-
-```
- - Run the following command to create a wallet:
-```
-btcwallet -u rpcuser -P rpcpass --create
-```
- - Run the following command to start btcwallet:
-```
-btcwallet -u rpcuser -P rpcpass
-```
 [Go]:https://golang.org/
 [btcd]:https://github.com/btcsuite/btcd
 
