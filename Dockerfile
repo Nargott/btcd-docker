@@ -20,7 +20,7 @@ RUN go get -u github.com/Masterminds/glide \
 &&  git clone https://github.com/btcsuite/btcwallet $GOPATH/src/github.com/btcsuite/btcwallet \
 &&  cd $GOPATH/src/github.com/btcsuite/btcwallet \
 &&  glide install \
-&&  go install . ./cmd/...
+&&  go install . ./cmd/... \
 &&  cd $GOPATH/src/github.com/btcsuite/btcwallet \
 &&  git pull && glide install \
 &&  go install . ./cmd/...
