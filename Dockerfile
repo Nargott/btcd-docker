@@ -1,7 +1,7 @@
-## -*- docker-image-name: "btcd:0.12.0-beta" -*-
+## -*- docker-image-name: "btcd:master" -*-
 FROM golang:1.9-stretch
 
-MAINTAINER lucianocallero@gmail.com
+MAINTAINER kiberpunk.mail@gmail.com
 
 RUN go env GOROOT GOPATH
 
@@ -15,5 +15,14 @@ RUN go get -u github.com/Masterminds/glide \
 && git pull && glide install \
 && go install . ./cmd/... \
 && btcctl --version
+
+RUN go get -u github.com/Masterminds/glide \
+&&  git clone https://github.com/btcsuite/btcwallet $GOPATH/src/github.com/btcsuite/btcwallet \
+&&  cd $GOPATH/src/github.com/btcsuite/btcwallet \
+&&  glide install \
+&&  go install . ./cmd/...
+&&  cd $GOPATH/src/github.com/btcsuite/btcwallet \
+&&  git pull && glide install \
+&&  go install . ./cmd/...
 
 ENTRYPOINT ["btcd"]

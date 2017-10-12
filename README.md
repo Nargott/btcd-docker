@@ -4,7 +4,7 @@
 
 A [btcd] image ready to go! An alternative to bitcoind written in [Go].
 
-Mount volumes for /root/.btcd and /root/.btcctl, it's where persistent data is kept.
+Mount volumes for /root/.btcd, /root/.btcctl and /root/.btcwallet, it's where persistent data is kept.
 
 If you choose to use docker-compose your .yml would look like this:
 ```
@@ -20,7 +20,7 @@ services:
     - /opt/btcd/.btcctl:/root/.btcct
 ```
 '
-And don't forget to write your own btcd.conf and btcctl.conf with user and password for RPC. 
+And don't forget to write your own btcd.conf, btcctl.conf and btcwallet.conf with user and password for RPC. 
 * btcd.conf configuration file
 ```
 [Application Options]
@@ -41,8 +41,28 @@ OR
 rpclimituser=mylimituser
 rpclimitpass=Limitedp4ssw0rd
 ```
+
+* btcwallet.conf configuration file
+```
+[Application Options]
+rpcuser=myuser
+rpcpass=SomeDecentp4ssw0rd
+```
+
+# Wallet
+Go to your container like
+```
+docker exec --it <containerID> /bin/bash
+```
+### Inside the container
+1. Run the following command to create a wallet:
+```
+btcwallet --create
+```
+2. Run the following command to start btcwallet:
+```
+btcwallet
+```
+
 [Go]:https://golang.org/
 [btcd]:https://github.com/btcsuite/btcd
-
-## LICENSE
-MIT
